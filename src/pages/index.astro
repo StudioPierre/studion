@@ -16,7 +16,9 @@
 		<title>Astro</title>
 	</head>
 	<body class="">
-
+		 
+			<span x-text="count"></span>
+		</div>
 	<container>
 		<section class="">
 			<div class="">
@@ -24,37 +26,44 @@
 					<source src="../assets/video/studion_1.mp4" type="video/mp4">
 				</video>
 			</div>
+		
 			<div class="wrapper">
 				<h2 class="text-2xl py-4 text-center">Studion</h2>
 				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
-				</div>
 			</div>
 
+			<div
+			class="accordion-wrapper"
+			x-data='{	
+			  studions:[
+				  {
+					  question : "Se mer om Studion?",
+					  answer : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque aboluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.",
+					  isOpen : true,
+				  },
+				  ]
+		  	}'>
 
-			<div class="wrapper">
-				
-			  
 				<div class="accordion">
-			  
-					<div class="accordion-panel">
-						<h2 id="panel2-title">
-						  <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion1-content">
-							Läs mer genom att klicka här!
-						  </button>
-						</h2>
-						<div class="accordion-content" role="region" aria-labelledby="panel2-title" aria-hidden="true" id="panel2-content">
-						  <div>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium harum autem delectus mollitia ab assumenda nemo facilis ea aliquam deleniti earum recusandae, eius, atque explicabo, expedita alias laboriosam labore iste.</p>
-							<p>Doloremque adipisci ea error ad architecto tempore ullam dolores voluptatibus. Perferendis debitis rem, aliquam, in laborum expedita iure soluta, sed blanditiis repellat eveniet minus cumque minima! Debitis numquam harum consequuntur?</p>
-							<p>Provident, tempore sit. Eaque nam eius assumenda iste rem, ipsam quisquam cumque. Nobis rerum quod, saepe dolore distinctio voluptate sit excepturi iusto quaerat tempora reiciendis adipisci sed perspiciatis qui maiores.</p>
-						  </div>
-						</div>
-					  </div>
+				<template x-for="studion in studions" :key="studion.question">
+					<div class="accordion-body">
+					<button class="accordion-button" @click="studion.isOpen=!studion.isOpen">
+						<div x-text="studion.question"></div>
+					</button>
+					<div
+						class="accordion-content"
+						x-show="!studion.isOpen"
+						x-transition:enter-start="opacity-0 transition-500 transitionX-100"
+						x-transition:enter-end="opacity-100 transition-500 transitionX-0"
+					>
+						<p x-text="studion.answer"></p>
+					</div>
+					</div>
+				</template>
 				</div>
-			</div>
-
+		  	</div>
 		</section>
 		<section class="">
 			<div class="wrapper-hero-video">
@@ -68,49 +77,46 @@
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
 			</div>
-			<div class="quick-example">
-				<div>
-				  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!</p>
-				  <p>Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.</p>
+
+			 <div
+			class="accordion-wrapper"
+			x-data='{	
+			  daylights:[
+				  {
+					  question : "Se mer om Daylight?",
+					  answer : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque aboluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.",
+					  isOpen : true,
+				  },
+				  ]
+		  	}'>
+
+				<div class="accordion">
+				<template x-for="daylight in daylights" :key="daylight.question">
+					<div class="accordion-body">
+					<button class="accordion-button" @click="daylight.isOpen=!daylight.isOpen">
+						<div x-text="daylight.question"></div>
+					</button>
+					<div
+						class="accordion-content"
+						x-show="!daylight.isOpen"
+						x-transition:enter-start="opacity-0 transition-500 transitionX-100"
+						x-transition:enter-end="opacity-100 transition-500 transitionX-0"
+					>
+						<p x-text="daylight.answer"></p>
+					</div>
+					</div>
+				</template>
 				</div>
-			 </div>
-		</section>		
+		  	</div>
+		
+		
+		
+		
+			</section>		
 
 	</container>
 </body>
 </html>
-<script>
-	const accordion = document.querySelector(".accordion");
-
-accordion.addEventListener("click", (e) => {
-  const activePanel = e.target.closest(".accordion-panel");
-  if (!activePanel) return;
-  toggleAccordion(activePanel);
-});
-
-function toggleAccordion(panelToActivate) {
-  const activeButton = panelToActivate.querySelector("button");
-  const activePanel = panelToActivate.querySelector(".accordion-content");
-  const activePanelIsOpened = activeButton.getAttribute("aria-expanded");
-
-  if (activePanelIsOpened === "true") {
-    panelToActivate
-      .querySelector("button")
-      .setAttribute("aria-expanded", false);
-
-    panelToActivate
-      .querySelector(".accordion-content")
-      .setAttribute("aria-hidden", true);
-  } else {
-    panelToActivate.querySelector("button").setAttribute("aria-expanded", true);
-
-    panelToActivate
-      .querySelector(".accordion-content")
-      .setAttribute("aria-hidden", false);
-  }
-}
-</script>
-
 	<style is:global>
 		html {
 			font-family: system-ui, sans-serif;
@@ -123,6 +129,14 @@ function toggleAccordion(panelToActivate) {
 			max-width: 100%;
 			display: block;
 		}
+		body {
+			
+			
+			font-family: 'Roboto', sans-serif;
+			line-height: 1.4;
+			overflow-x: hidden;
+		
+}
 	
 		.wrapper {
 			width: min(70ch, 100% - 4rem);
@@ -177,7 +191,64 @@ function toggleAccordion(panelToActivate) {
   position: relative;
 }
 
+.accordion-wrapper {
+  width: 100%;
+  max-width: 70rem;
+  margin: .5rem auto;
+  padding: .5rem 1rem;
+  background-color: #f4f4f4;
 
+}
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.accordion-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  
+}
+.accordion-button div {
+  
+  font-weight: 700;
+  color: #191919;
+  flex: 1;
+  text-align: center;
+}
+.accordion-body:not(.accordion-body:last-of-type) {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion-content p {
+  line-height: 1.4;
+  font-size: 400;
+  padding: 1rem 0;
+  color: #303030;
+}
+/* These Classes Used in Alpine Js for Transition Effects */
+
+.transition-500 {
+  transition: all 1s ease-in-out;
+}
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+.transitionX-100 {
+  transform: translateX(-100%);
+}
+.transitionX-0 {
+  transform: translateX(0);
+}
 
 
 
