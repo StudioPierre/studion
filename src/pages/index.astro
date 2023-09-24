@@ -1,98 +1,77 @@
 ---
-
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Expand from '../components/expanding.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="">
+
 	<container>
 		<section class="">
 			<div class="">
-				<video class="inset-0 w-screen" autoplay muted>
-					<source src="../test-v2_comp.mp4" type="video/mp4">
+				<video class="inset-0 w-full aspect-video" autoplay muted loop>
+					<source src="../assets/video/studion_1.mp4" type="video/mp4">
 				</video>
 			</div>
-			<div class="container mx-auto">
-				<h2 class="text-center">Studion</h2>
-				<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+			<div class="wrapper-hero-text">
+				<h2 class="text-2xl py-4">Studion</h2>
+				<p class="tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
 			</div>
-			<div class="quick-example">
-				<div>
-				  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!</p>
-				  <p>Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.</p>
-				</div>
-			  </div>
+			<Expand />
+
 		</section>
 		<section class="">
-			<div class="">
-				<video class="inset-0 w-screen" autoplay muted>
-					<source src="../test-v2_comp.mp4" type="video/mp4">
+			<div class="wrapper-hero-video">
+				<video class="inset-0 w-screen aspect-video" autoplay muted loop>
+					<source src="../assets/video/daylight_1.mp4" type="video/mp4">
 				</video>
 			</div>
-			<div class="container mx-auto">
-				<h2 class="text-center">Studion</h2>
-				<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+			<div class="wrapper-hero-text">
+				<h2 class="text-2xl py-4">Studion</h2>
+				<p class="tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
 			</div>
-			<div class="quick-example">
-				<div>
-				  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!</p>
-				  <p>Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.</p>
-				</div>
-			  </div>
-		</section>		<section class="">
-			<div class="">
-				<video class="inset-0 w-screen" autoplay muted>
-					<source src="../test-v2_comp.mp4" type="video/mp4">
-				</video>
-			</div>
-			<div class="container mx-auto">
-				<h2 class="text-center">Studion</h2>
-				<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
-					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
-				</p>
-			</div>
-			<div class="quick-example">
-				<div>
-				  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!</p>
-				  <p>Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.</p>
-				</div>
-			  </div>
-		</section>
+			<Expand />
+		</section>		
+
 	</container>
-	</body>
-</html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-	}
-	.quick-example {
-		margin: 1rem;
-		padding: 1rem;
-		background: hsl(200 50% 50% / 0.4);
-		border-radius: 0.5rem;
 
-		display: grid;
-		grid-template-rows: 0fr;
-		transition: grid-template-rows 500ms;
+	<style is:global>
+		html {
+			font-family: system-ui, sans-serif;
+			font-size: 1.25rem;
+			line-height: 1.5;
 		}
-
-	.quick-example > div {
-		overflow: hidden;
+		img,
+		svg,
+		video {
+			max-width: 100%;
+			display: block;
 		}
-
-	.quick-example:hover {
-		grid-template-rows: 1fr;
+	
+		.wrapper-hero-text {
+			width: min(70ch, 100% - 4rem);
+			margin-inline: auto;
+			text-align: center;
 		}
-
-</style>
-
+		.quick-example {
+			margin: 1rem;
+			padding: 1rem;
+			background: hsl(200 50% 50% / 0.4);
+			border-radius: 0.5rem;
+	
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 500ms;
+			}
+	
+		.quick-example > div {
+			overflow: hidden;
+			}
+	
+		.quick-example:hover {
+			grid-template-rows: 1fr;
+			}
+	
+	</style>
