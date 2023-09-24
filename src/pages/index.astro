@@ -7,6 +7,11 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta
+  			name="description"
+  			content="Mary's simple recipe for maple bacon donuts
+           	makes a sticky, sweet treat with just a hint
+          	of salt that you'll keep coming back for.">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
@@ -19,18 +24,36 @@
 					<source src="../assets/video/studion_1.mp4" type="video/mp4">
 				</video>
 			</div>
-			<div class="wrapper-hero-text">
-				<h2 class="text-2xl py-4">Studion</h2>
-				<p class="tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+			<div class="wrapper">
+				<h2 class="text-2xl py-4 text-center">Studion</h2>
+				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
-			</div>
-			<div class="quick-example">
-				<div>
-				  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!</p>
-				  <p>Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.</p>
 				</div>
-			 </div>
+			</div>
+
+
+			<div class="wrapper">
+				
+			  
+				<div class="accordion">
+			  
+					<div class="accordion-panel">
+						<h2 id="panel2-title">
+						  <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion1-content">
+							Läs mer genom att klicka här!
+						  </button>
+						</h2>
+						<div class="accordion-content" role="region" aria-labelledby="panel2-title" aria-hidden="true" id="panel2-content">
+						  <div>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium harum autem delectus mollitia ab assumenda nemo facilis ea aliquam deleniti earum recusandae, eius, atque explicabo, expedita alias laboriosam labore iste.</p>
+							<p>Doloremque adipisci ea error ad architecto tempore ullam dolores voluptatibus. Perferendis debitis rem, aliquam, in laborum expedita iure soluta, sed blanditiis repellat eveniet minus cumque minima! Debitis numquam harum consequuntur?</p>
+							<p>Provident, tempore sit. Eaque nam eius assumenda iste rem, ipsam quisquam cumque. Nobis rerum quod, saepe dolore distinctio voluptate sit excepturi iusto quaerat tempora reiciendis adipisci sed perspiciatis qui maiores.</p>
+						  </div>
+						</div>
+					  </div>
+				</div>
+			</div>
 
 		</section>
 		<section class="">
@@ -39,9 +62,9 @@
 					<source src="../assets/video/daylight_1.mp4" type="video/mp4">
 				</video>
 			</div>
-			<div class="wrapper-hero-text">
-				<h2 class="text-2xl py-4">Studion</h2>
-				<p class="tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+			<div class="wrapper">
+				<h2 class="text-2xl py-4 text-center">Studion</h2>
+				<p class="text-center  tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
 			</div>
@@ -56,6 +79,37 @@
 	</container>
 </body>
 </html>
+<script>
+	const accordion = document.querySelector(".accordion");
+
+accordion.addEventListener("click", (e) => {
+  const activePanel = e.target.closest(".accordion-panel");
+  if (!activePanel) return;
+  toggleAccordion(activePanel);
+});
+
+function toggleAccordion(panelToActivate) {
+  const activeButton = panelToActivate.querySelector("button");
+  const activePanel = panelToActivate.querySelector(".accordion-content");
+  const activePanelIsOpened = activeButton.getAttribute("aria-expanded");
+
+  if (activePanelIsOpened === "true") {
+    panelToActivate
+      .querySelector("button")
+      .setAttribute("aria-expanded", false);
+
+    panelToActivate
+      .querySelector(".accordion-content")
+      .setAttribute("aria-hidden", true);
+  } else {
+    panelToActivate.querySelector("button").setAttribute("aria-expanded", true);
+
+    panelToActivate
+      .querySelector(".accordion-content")
+      .setAttribute("aria-hidden", false);
+  }
+}
+</script>
 
 	<style is:global>
 		html {
@@ -70,10 +124,9 @@
 			display: block;
 		}
 	
-		.wrapper-hero-text {
+		.wrapper {
 			width: min(70ch, 100% - 4rem);
 			margin-inline: auto;
-			text-align: center;
 		}
 		.quick-example {
 			margin: 1rem;
@@ -93,5 +146,43 @@
 		.quick-example:hover {
 			grid-template-rows: 1fr;
 			}
-	
+
+
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+}
+
+.accordion-content[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+.accordion {
+ 
+  padding: 1rem;
+}
+
+.accordion-panel {
+  padding: 1rem;
+  border: 1px solid;
+}
+
+.accordion h2 {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
 	</style>
