@@ -2,7 +2,7 @@
 
 
 ---
-<html lang="sv">
+<html lang="sv" class="snap-y snap-mandatory">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,11 +16,7 @@
 		<title>Astro</title>
 	</head>
 	<body class="">
-		 
-			<span x-text="count"></span>
-		</div>
-	<container>
-		<section class="">
+		<section x-data="{ open: false }" class="snap-start ">
 			<div class="">
 				<video class="inset-0 w-full aspect-video" autoplay muted loop>
 					<source src="../assets/video/studion_1.mp4" type="video/mp4">
@@ -28,29 +24,88 @@
 			</div>
 		
 			<div class="wrapper">
-				<h2 class="text-2xl py-4 text-center">Studion</h2>
+				<h2 class="text-2xl py-4 text-center invisible">Daylight</h2>
+				<p class="text-center tracking-wide">1200 kvadratmeter fördelat på 4 studios, podd-studio och sköna sociala utrymmen.
+					Ojämförbart med allt och med obegränsade möjligheter erbjuder studion produktioner i allt från flerrumsbyggen, vassåkrar och ösregn till totalt mörker och dagsljus.
+					Livesändningar, podd-produktioner, snickeri och ytor för volym och logistik.
+					Oavsett du kommer som produktionsbolag, fotograf eller inhouseavdelningen kommer din produktion nå nya höjder på studion. Här finns inga problem, bara lösningar i en historisk atmosfär!</p>
+				<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
+			</div>
+			<div x-show="open" @click.outside="open = false" class="wrapper">
 				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
+
 			</div>
 
 		</section>
-		<section class="">
+		<section x-data="{ open: false }" class="snap-start">
 			<div class="wrapper-hero-video">
 				<video class="inset-0 w-screen aspect-video" autoplay muted loop>
 					<source src="../assets/video/daylight_1.mp4" type="video/mp4">
 				</video>
 			</div>
 			<div class="wrapper">
-				<h2 class="text-2xl py-4 text-center">Studion</h2>
-				<p class="text-center  tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+				<h2 class="text-2xl py-4 text-center invisible">Daylight</h2>
+				<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
+					samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
+				</p>
+				<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
+
+			</div>	
+			<div x-show="open" @click.outside="open = false" class="wrapper">
+				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
-			</div>	
-			</section>		
 
-	</container>
-</body>
+			</div>
+
+			</section>		
+			<section x-data="{ open: false }" class="snap-start ">
+				<div class="wrapper-hero-video">
+					<video class="inset-0 w-screen aspect-video" autoplay muted loop>
+						<source src="../assets/video/daylight_1.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="wrapper">
+					<h2 class="text-2xl py-4 text-center invisible">Daylight</h2>
+					<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
+						samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
+					</p>
+					<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
+	
+				</div>	
+				<div x-show="open" @click.outside="open = false" class="wrapper">
+					<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+						Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
+					</p>
+	
+				</div>
+	
+				</section>		
+				<section x-data="{ open: false }" class="snap-start ">
+					<div class="wrapper-hero-video">
+						<video class="inset-0 w-screen aspect-video" autoplay muted loop>
+							<source src="../assets/video/daylight_1.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="wrapper">
+						<h2 class="text-2xl py-4 text-center invisible">Daylight</h2>
+						<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
+							samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
+						</p>
+						<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
+		
+					</div>	
+					<div x-show="open" @click.outside="open = false" class="wrapper">
+						<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
+							Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
+						</p>
+		
+					</div>
+		
+					</section>		
+	</body>
 </html>
 	<style is:global>
 		html {
