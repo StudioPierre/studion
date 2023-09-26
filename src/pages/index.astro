@@ -1,21 +1,9 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
 
 ---
-<html lang="sv" class="snap-y snap-mandatory">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta
-  			name="description"
-  			content="Mary's simple recipe for maple bacon donuts
-           	makes a sticky, sweet treat with just a hint
-          	of salt that you'll keep coming back for.">
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="">
+
+<MainLayout title="Studion">
 		<section x-data="{ open: false }" class="snap-start ">
 			<div class="">
 				<video class="inset-0 w-full aspect-video" autoplay muted loop>
@@ -29,12 +17,32 @@
 					Ojämförbart med allt och med obegränsade möjligheter erbjuder studion produktioner i allt från flerrumsbyggen, vassåkrar och ösregn till totalt mörker och dagsljus.
 					Livesändningar, podd-produktioner, snickeri och ytor för volym och logistik.
 					Oavsett du kommer som produktionsbolag, fotograf eller inhouseavdelningen kommer din produktion nå nya höjder på studion. Här finns inga problem, bara lösningar i en historisk atmosfär!</p>
-				<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
+
+				<div class="flex items-center justify-center py-8">
+					<button @click="open = ! open" type="button" class=" bg-gray-900 rounded w-2/3">
+						<p class="text-sm leading-6 text-white">Läs mer</p>
+						<span class="sr-only">Dismiss</span>
+					</button>
+				</div>
 			</div>
-			<div x-show="open" @click.outside="open = false" class="wrapper">
-				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
-					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
-				</p>
+			<div x-show="open" @click.outside="open = false" class="w-full">
+				<div class="bg-gray-900 py-8 ">
+					<div class="mx-auto max-w-7xl px-6 lg:px-8">
+					  <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+						<div class="mx-auto w-full max-w-xl lg:mx-0">
+						  <h2 class="text-3xl font-bold tracking-tight text-white">DAYLIGHT</h2>
+						  <p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
+						  <div class="mt-8 flex items-center gap-x-6">
+							<a href="#" class="text-sm font-semibold text-white">Ladda ner en PDF <span aria-hidden="true">&rarr;</span></a>
+						  </div>
+						</div>
+						<div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-2 sm:gap-y-2 lg:mx-0 lg:max-w-none lg:pl-8">
+						  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+						  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+						</div>
+					  </div>
+					</div>
+				  </div>
 
 			</div>
 
@@ -50,13 +58,31 @@
 				<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
 					samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
 				</p>
-				<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
-
-			</div>	
-			<div x-show="open" @click.outside="open = false" class="wrapper">
-				<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
-					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
-				</p>
+				<div class="flex items-center justify-center py-8">
+					<button @click="open = ! open" type="button" class=" bg-gray-900 rounded w-2/3">
+						<p class="text-sm leading-6 text-white">Läs mer</p>
+						<span class="sr-only">Dismiss</span>
+					</button>
+				</div>
+			</div>
+			<div x-show="open" @click.outside="open = false" class="w-full">
+				<div class="bg-gray-900 py-8 ">
+					<div class="mx-auto max-w-7xl px-6 lg:px-8">
+					  <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+						<div class="mx-auto w-full max-w-xl lg:mx-0">
+						  <h2 class="text-3xl font-bold tracking-tight text-white">DAYLIGHT</h2>
+						  <p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
+						  <div class="mt-8 flex items-center gap-x-6">
+							<a href="#" class="text-sm font-semibold text-white">Ladda ner en PDF <span aria-hidden="true">&rarr;</span></a>
+						  </div>
+						</div>
+						<div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-2 sm:gap-y-2 lg:mx-0 lg:max-w-none lg:pl-8">
+						  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+						  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+						</div>
+					  </div>
+					</div>
+				  </div>
 
 			</div>
 
@@ -72,13 +98,31 @@
 					<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
 						samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
 					</p>
-					<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
-	
-				</div>	
-				<div x-show="open" @click.outside="open = false" class="wrapper">
-					<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
-						Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
-					</p>
+					<div class="flex items-center justify-center py-8">
+						<button @click="open = ! open" type="button" class=" bg-gray-900 rounded w-2/3">
+							<p class="text-sm leading-6 text-white">Läs mer</p>
+							<span class="sr-only">Dismiss</span>
+						</button>
+					</div>
+				</div>
+				<div x-show="open" @click.outside="open = false" class="w-full">
+					<div class="bg-gray-900 py-8 ">
+						<div class="mx-auto max-w-7xl px-6 lg:px-8">
+						  <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+							<div class="mx-auto w-full max-w-xl lg:mx-0">
+							  <h2 class="text-3xl font-bold tracking-tight text-white">DAYLIGHT</h2>
+							  <p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
+							  <div class="mt-8 flex items-center gap-x-6">
+								<a href="#" class="text-sm font-semibold text-white">Ladda ner en PDF <span aria-hidden="true">&rarr;</span></a>
+							  </div>
+							</div>
+							<div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-2 sm:gap-y-2 lg:mx-0 lg:max-w-none lg:pl-8">
+							  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+							  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+							</div>
+						  </div>
+						</div>
+					  </div>
 	
 				</div>
 	
@@ -94,19 +138,37 @@
 						<p class="text-center  tracking-wide">Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310) med löstagbara spröjs,
 							samt glaspyramiden på taket, ger ett fantastiskt ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner. Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64 amp, flyttbar entresol för fotografering ovanifrån
 						</p>
-						<button @click="open = ! open" class="text-lg border border-indigo-700 hover:bg-green-700">Klicka</button>
-		
-					</div>	
-					<div x-show="open" @click.outside="open = false" class="wrapper">
-						<p class="text-center tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
-							Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
-						</p>
+						<div class="flex items-center justify-center py-8">
+							<button @click="open = ! open" type="button" class=" bg-gray-900 rounded w-2/3">
+								<p class="text-sm leading-6 text-white">Läs mer</p>
+								<span class="sr-only">Dismiss</span>
+							</button>
+						</div>
+					</div>
+					<div x-show="open" @click.outside="open = false" class="w-full">
+						<div class="bg-gray-900 py-8 ">
+							<div class="mx-auto max-w-7xl px-6 lg:px-8">
+							  <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+								<div class="mx-auto w-full max-w-xl lg:mx-0">
+								  <h2 class="text-3xl font-bold tracking-tight text-white">DAYLIGHT</h2>
+								  <p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
+								  <div class="mt-8 flex items-center gap-x-6">
+									<a href="#" class="text-sm font-semibold text-white">Ladda ner en PDF <span aria-hidden="true">&rarr;</span></a>
+								  </div>
+								</div>
+								<div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-2 sm:gap-y-2 lg:mx-0 lg:max-w-none lg:pl-8">
+								  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+								  <img class="max-h-42 w-full object-contain object-left" src="assets/images/unsplash1.jpg" alt="1" width="385" height="600">
+								</div>
+							  </div>
+							</div>
+						  </div>
 		
 					</div>
 		
-					</section>		
-	</body>
-</html>
+					</section>	
+				</MainLayout>	
+
 	<style is:global>
 		html {
 			font-family: system-ui, sans-serif;
