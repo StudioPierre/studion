@@ -34,36 +34,6 @@
 				</p>
 			</div>
 
-			<div
-			class="accordion-wrapper"
-			x-data='{	
-			  studions:[
-				  {
-					  question : "Se mer om Studion?",
-					  answer : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque aboluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.",
-					  isOpen : true,
-				  },
-				  ]
-		  	}'>
-
-				<div class="accordion">
-				<template x-for="studion in studions" :key="studion.question">
-					<div class="accordion-body">
-					<button class="accordion-button" @click="studion.isOpen=!studion.isOpen">
-						<div x-text="studion.question"></div>
-					</button>
-					<div
-						class="accordion-content"
-						x-show="!studion.isOpen"
-						x-transition:enter-start="opacity-0 transition-500 transitionX-100"
-						x-transition:enter-end="opacity-100 transition-500 transitionX-0"
-					>
-						<p x-text="studion.answer"></p>
-					</div>
-					</div>
-				</template>
-				</div>
-		  	</div>
 		</section>
 		<section class="">
 			<div class="wrapper-hero-video">
@@ -76,42 +46,7 @@
 				<p class="text-center  tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque ab, blanditiis facere possimus obcaecati voluptate sed!
 					Voluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.
 				</p>
-			</div>
-
-			 <div
-			class="accordion-wrapper"
-			x-data='{	
-			  daylights:[
-				  {
-					  question : "Se mer om Daylight?",
-					  answer : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti, sint distinctio deserunt vel unde consequatur sequi nobis necessitatibus quis ad officiis doloremque aboluptas, ipsa porro? Ex nostrum culpa magnam magni officiis laboriosam fugit molestias amet reiciendis sunt facere, debitis odit neque totam natus ad aliquam minus, sed repellat eveniet, et impedit ipsa.",
-					  isOpen : true,
-				  },
-				  ]
-		  	}'>
-
-				<div class="accordion">
-				<template x-for="daylight in daylights" :key="daylight.question">
-					<div class="accordion-body">
-					<button class="accordion-button" @click="daylight.isOpen=!daylight.isOpen">
-						<div x-text="daylight.question"></div>
-					</button>
-					<div
-						class="accordion-content"
-						x-show="!daylight.isOpen"
-						x-transition:enter-start="opacity-0 transition-500 transitionX-100"
-						x-transition:enter-end="opacity-100 transition-500 transitionX-0"
-					>
-						<p x-text="daylight.answer"></p>
-					</div>
-					</div>
-				</template>
-				</div>
-		  	</div>
-		
-		
-		
-		
+			</div>	
 			</section>		
 
 	</container>

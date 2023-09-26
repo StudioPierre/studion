@@ -2,7 +2,7 @@
 
 
 ---
-<html lang="sv" class="snap-y snap-mandatory ">
+<html lang="sv" class="snap-y  ">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -19,13 +19,13 @@
 	<body class="">
         
 
-            <div class="snap-start snap-always w-screen h-screen">
-                <video class="inset-0 -z-10 w-screen h-3/4 object-cover" autoplay muted loop>
+            <div class="snap-start snap-always w-screen h-screen flex items-center justify-center">
+                <video class="inset-0 -z-10 w-screen h-screen object-cover" autoplay muted loop>
                     <source src="../assets/video/studion_1.mp4" type="video/mp4">
                 </video>
 
             
-                <div class="absolute inset-x-0 h-1/4">
+                <div class="absolute flex items-center justify-center ">
                     <div class="mx-auto max-w-4xl text-center ">
                         <h1 class="text-xl tracking-tight text-gray-900">Studion</h1>
                         <p class="mt-6 text-lg leading-8 text-gray-600">1200 kvadratmeter fördelat på 4 studios, podd-studio och sköna sociala utrymmen.
@@ -33,9 +33,9 @@
                             Livesändningar, podd-produktioner, snickeri och ytor för volym och logistik.
                             Oavsett du kommer som produktionsbolag, fotograf eller inhouseavdelningen kommer din produktion nå nya höjder på studion. Här finns inga problem, bara lösningar i en historisk atmosfär!
                             Välkommen!</p>
-                    </div>
-                    <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Läs mer <span aria-hidden="true">→</span></a>
+                            <div class="mt-10 flex items-center justify-center gap-x-6">
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Läs mer <span aria-hidden="true">→</span></a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -61,12 +61,34 @@
             </div>
 
 
-            <div class="snap-start snap-always  bg-amber-200 w-screen h-screen flex items-center justify-center text-8xl">1</div>
-            <div class="snap-start snap-always bg-teal-200 w-screen h-screen flex items-center justify-center text-8xl">2</div>
-            <div class="snap-start snap-always bg-cyan-200 w-screen h-screen flex items-center justify-center text-8xl">3</div>
-            <div class="snap-start snap-always bg-fuchsia-200 w-screen h-screen flex items-center justify-center text-8xl">4</div>
+            <section  x-data="{ open: false }" class="relative snap-start snap-always w-screen h-screen flex items-center justify-center text-8xl">
+                <div x-show="open" @click.outside="open = false" class="absolute inset-0 w-screen h-1/2 bg-green-100 z-50"></div>
+                <video class="inset-0 -z-10 w-screen h-screen object-cover" autoplay muted loop>
+                    <source src="../assets/video/studion_1.mp4" type="video/mp4">
+                </video>
+                <div class="absolute flex items-center justify-center bg-white/80 p-8">
+                    <div class="mx-auto max-w-4xl text-center ">
+                        <h1 class="text-9xl tracking-tight text-black">Studion</h1>
+                        <p class="mt-6 text-lg leading-8 text-black">1200 kvadratmeter fördelat på 4 studios, podd-studio och sköna sociala utrymmen.
+                            Ojämförbart med allt och med obegränsade möjligheter erbjuder studion produktioner i allt från flerrumsbyggen, vassåkrar och ösregn till totalt mörker och dagsljus.
+                            Livesändningar, podd-produktioner, snickeri och ytor för volym och logistik.
+                            Oavsett du kommer som produktionsbolag, fotograf eller inhouseavdelningen kommer din produktion nå nya höjder på studion. Här finns inga problem, bara lösningar i en historisk atmosfär!
+                            Välkommen!
+                        </p>
+                        <button @click="open = ! open" class="text-lg">Klicka</button>    
+                </div>                    
+                
+            </section>
+            
+            
+            
+    
+           
+          
        
 
-
+                    
+               
     </body>
+
 </html>
