@@ -4,7 +4,7 @@ import Info from '../components/InfoBox.astro';
 ---
 
 <MainLayout title="Studion">
-  <section id="Studion" class="">
+  <section id="Daylight" class="">
     <div class="">
       <img
         src="../assets/images/daylight.png"
@@ -59,15 +59,15 @@ import Info from '../components/InfoBox.astro';
     <Info />
   </section>
 
-  <section id="Ecom" class="">
+  <section id="Hightlight" class="">
     <div class="">
       <img
-        src="../assets/images/daylight.jpg"
+        src="../assets/images/highlight.jpg"
         alt=""
         class="w-full object-center mt- hidden"
       />
       <video id="video1" class="inset-0 w-full" playsinline autoplay muted loop>
-        <source src="../assets/video/ecom.mp4" type="video/mp4" />
+        <source src="../assets/video/highlight.mp4" type="video/mp4" />
       </video>
     </div>
 
@@ -83,113 +83,35 @@ import Info from '../components/InfoBox.astro';
     </div>
     <Info />
   </section>
+  <script>
+    function playPauseVideo() {
+      let videos = document.querySelectorAll('video');
+      videos.forEach((video) => {
+        // We can only control playback without insteraction if video is mute
+        video.muted = true;
+        // Play is a promise so we need to check we have it
+        let playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then((_) => {
+            let observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.intersectionRatio !== 1 && !video.paused) {
+                    video.pause();
+                  } else if (video.paused) {
+                    video.play();
+                  }
+                });
+              },
+              { threshold: 0.6 }
+            );
+            observer.observe(video);
+          });
+        }
+      });
+    }
 
-  <section x-data="{ open: false }" class="">
-    <div class="wrapper-hero-video">
-      <video
-        id="video2"
-        class="inset-0 w-screen aspect-video"
-        playsinline
-        autoplay
-        muted
-        loop
-      >
-        <source src="../assets/video/daylight.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="wrapper">
-      <h2 class="text-2xl py-4 text-center invisible">Daylight</h2>
-      <p class="text-center tracking-wide">
-        Vår största studio på 300 m2 (20x15meter), två stora fönster (310x310)
-        med löstagbara spröjs, samt glaspyramiden på taket, ger ett fantastiskt
-        ljus som dessutom är fullt kontrollerbart med mörkläggningsgardiner.
-        Rundhorisont mot tak och golv samt i hörnet. 8 meter till tak, 3-fas 64
-        amp, flyttbar entresol för fotografering ovanifrån
-      </p>
-      <div class="flex items-center justify-center py-8">
-        <button
-          @click="open = ! open"
-          type="button"
-          class="bg-gray-900 rounded w-2/3"
-        >
-          <p class="text-sm leading-6 text-white">Läs mer</p>
-          <span class="sr-only">Dismiss</span>
-        </button>
-      </div>
-    </div>
-    <div x-show="open" @click.outside="open = false" class="w-full">
-      <div class="bg-gray-900 py-8">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2"
-          >
-            <div class="mx-auto w-full max-w-xl lg:mx-0">
-              <h2 class="text-3xl font-bold tracking-tight text-white">
-                DAYLIGHT
-              </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                egestas tempus tellus etiam sed. Quam a scelerisque amet
-                ullamcorper eu enim et fermentum, augue.
-              </p>
-              <div class="mt-8 flex items-center gap-x-6">
-                <a href="#" class="text-sm font-semibold text-white"
-                  >Ladda ner en PDF <span aria-hidden="true">&rarr;</span></a
-                >
-              </div>
-            </div>
-            <div
-              class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-2 sm:gap-y-2 lg:mx-0 lg:max-w-none lg:pl-8"
-            >
-              <img
-                class="max-h-42 w-full object-contain object-left"
-                src="assets/images/unsplash1.jpg"
-                alt="1"
-                width="385"
-                height="600"
-              />
-              <img
-                class="max-h-42 w-full object-contain object-left"
-                src="assets/images/unsplash1.jpg"
-                alt="1"
-                width="385"
-                height="600"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    // And you would kick this off where appropriate with:
+    playPauseVideo();
+  </script>
 </MainLayout>
-<script>
-  function playPauseVideo() {
-    let videos = document.querySelectorAll('video');
-    videos.forEach((video) => {
-      // We can only control playback without insteraction if video is mute
-      video.muted = true;
-      // Play is a promise so we need to check we have it
-      let playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.then((_) => {
-          let observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.intersectionRatio !== 1 && !video.paused) {
-                  video.pause();
-                } else if (video.paused) {
-                  video.play();
-                }
-              });
-            },
-            { threshold: 0.9 }
-          );
-          observer.observe(video);
-        });
-      }
-    });
-  }
-
-  // And you would kick this off where appropriate with:
-  playPauseVideo();
-</script>

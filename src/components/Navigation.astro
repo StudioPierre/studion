@@ -1,4 +1,17 @@
-<header class="bg-gray-900">
+<header
+  x-data="{ 
+    open: false,
+    toggle(){
+      this.open = this.open ? this.close() :true
+    },
+    close() {
+      this.open = false
+    } 
+  }"
+  x-on:keydown.escape.prevent.stop="close($refs.button)"
+  x-id="['dropdown-button']"
+  class="bg-gray-900"
+>
   <nav
     class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
     aria-label="Global"
@@ -33,11 +46,14 @@
     <div class="hidden lg:flex lg:gap-x-12">
       <div class="relative">
         <button
+          x-ref="button"
+          x-on:click="toggle"
+          :aria-expanded="open"
+          :aria-controls="$id('dropdown-button')"
           type="button"
           class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-100"
-          aria-expanded="false"
         >
-          <a href="/studios"> Studios</a>
+          Studios
           <svg
             class="h-5 w-5 flex-none text-gray-300"
             viewBox="0 0 20 20"
@@ -61,7 +77,15 @@
             From: "opacity-100 translate-y-0"
             To: "opacity-0 translate-y-1"
         -->
+
+        <!-- Panel -->
         <div
+          x-ref="panel"
+          x-show="open"
+          x-transition.origin.top.left
+          x-on:click.outside="close($refs.button)"
+          :id="$id('dropdown-button')"
+          style="display: none;"
           class="absolute -left-4 top-full z-10 mt-3 max-w-sm overflow-hidden rounded-1xl bg-gray-900 shadow-lg ring-1 ring-gray-900/5"
         >
           <div class="p-4">
@@ -69,7 +93,10 @@
               class="group relative flex items-center gap-x-1 rounded-lg p-1 text-sm leading-6"
             >
               <div class="flex-auto">
-                <a href="#" class="block font-semibold text-gray-100">
+                <a
+                  href="/studios/#Daylight"
+                  class="block font-semibold text-gray-100"
+                >
                   DAYLIGHT
                   <span class="absolute inset-0"></span>
                 </a>
@@ -79,7 +106,10 @@
               class="group relative flex items-center gap-x-1 rounded-lg p-1 text-sm leading-6"
             >
               <div class="flex-auto">
-                <a href="#" class="block font-semibold text-gray-100">
+                <a
+                  href="/studios/#Ecom"
+                  class="block font-semibold text-gray-100"
+                >
                   ECOM
                   <span class="absolute inset-0"></span>
                 </a>
@@ -89,7 +119,10 @@
               class="group relative flex items-center gap-x-1 rounded-lg p-1 text-sm leading-6"
             >
               <div class="flex-auto">
-                <a href="#" class="block font-semibold text-gray-100">
+                <a
+                  href="/studios/#Hightlight"
+                  class="block font-semibold text-gray-100"
+                >
                   HIGHLIGHT
                   <span class="absolute inset-0"></span>
                 </a>
@@ -99,7 +132,7 @@
               class="group relative flex items-center gap-x-1 rounded-lg p-1 text-sm leading-6"
             >
               <div class="flex-auto">
-                <a href="#" class="block font-semibold text-gray-100">
+                <a href="/studios" class="block font-semibold text-gray-100">
                   BLACKBOX
                   <span class="absolute inset-0"></span>
                 </a>
@@ -109,7 +142,7 @@
               class="group relative flex items-center gap-x-1 rounded-lg p-1 text-sm leading-6"
             >
               <div class="flex-auto">
-                <a href="#" class="block font-semibold text-gray-100">
+                <a href="/studios" class="block font-semibold text-gray-100">
                   PODDSTUDION
                   <span class="absolute inset-0"></span>
                 </a>
@@ -127,6 +160,7 @@
       >
     </div>
   </nav>
+
   <!-- Mobile menu, show/hide based on menu open state. -->
   <div class="lg:hidden" role="dialog" aria-modal="true">
     <!-- Background backdrop, show/hide based on slide-over state. -->
