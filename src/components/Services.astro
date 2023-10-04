@@ -1,0 +1,93 @@
+---
+// import the Image component and the image
+import { Image } from 'astro:assets';
+import my01Image from '../assets/images/s-utrustning.png';
+import my02Image from '../assets/images/s-utrustning-lg.jpg';
+import my03Image from '../assets/images/s-kompetens-lg.jpg';
+import my04Image from '../assets/images/s-kompetens.png';
+import my05Image from '../assets/images/s-snickeri.png';
+import my06Image from '../assets/images/s-snickeri-lg.jpg';
+import my07Image from '../assets/images/s-hallbarhet-lg.jpg';
+import my08Image from '../assets/images/s-hallbarhet.png';
+---
+
+<main>
+  <div class="grid grid-rows-2 sm:grid-cols-2">
+    <div class="mx-8 md:mx-14 mt-8 sm:pt-14 lg:mt-24 sm:order-1">
+      <Image src={my01Image} alt="Utrustning" />
+      <h2 class="text-5xl hidden">Utrustning</h2>
+      <p class="pt-8">
+        Vi tillhandahåller all utrustning för foto-, film- och ljudproduktion.
+        Det vi motförmodan inte har i hyllan löser vi genom väl inkörda
+        samarbeten. Skicka önseklistan till pierre@studion.se så återkommer vi
+        med offert.
+      </p>
+      <p class="pt-8">Vi har inte sagt nej till något sen 1987</p>
+    </div>
+    <div class="sm:order-2">
+      <Image
+        src={my02Image}
+        alt="A description of my image."
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+    <div class="mx-8 md:mx-14 mt-8 sm:pt-14 lg:mt-24 sm:order-4">
+      <Image src={my04Image} alt="Kompetens." />
+      <h2 class="text-5xl hidden">Kompetens</h2>
+      <p class="pt-8">
+        Den samlade kompetensen i studion och folk som verkar i den täcker alla
+        moment i det kreativa arbetet kring foto- och filmproduktioner. Behöver
+        du stöttning, avslastning eller hjälp av: Assitenter, manusförfattare,
+        mask, hår/make, fotografering, film, AD, copy, klipp, vfx,
+        produktionsledning - låt oss veta!
+      </p>
+      <p class="pt-8">
+        Vi älskar samarbeten men blir glad av, blir bättre av, och när vår
+        erfarenhet gör andra bättre!
+      </p>
+    </div>
+    <div class="sm:order-3">
+      <Image
+        src={my03Image}
+        alt="A description of my image."
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+    <div class="mx-8 md:mx-14 mt-8 sm:pt-14 lg:mt-24 sm:order-5">
+      <Image src={my05Image} alt="A description of my image." />
+      <h2 class="text-5xl hidden">Snickeri</h2>
+      <p class="pt-8">
+        På studion har det gjorts produktioner i allt från vajande vassåkrar
+        till ösregn. Vi har byggt kulisser från slott till koja, fysiska byggen
+        eller digitalt spelar ingen roll. Stenlagt eller trägolv, putsat eller
+        tapetserat, i skogen på stranden.
+      </p>
+      <p class="pt-8">Vi skapar miljön du behöver.</p>
+    </div>
+    <div class="sm:order-6">
+      <Image
+        src={my06Image}
+        alt="A description of my image."
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+    <div class="mx-8 md:mx-14 mt-8 sm:pt-14 lg:mt-24 sm:order-8">
+      <Image src={my08Image} alt="Hållbarhet." />
+      <h2 class="text-5xl hidden">Hållbarhet</h2>
+      <p class="pt-8">
+        Vi tillhandahåller all utrustning för foto-, film- och ljudproduktion.
+        Det vi motförmodan inte har i hyllan löser vi genom väl inkörda
+        samarbeten. Skicka önseklistan till pierre@studion.se så återkommer vi
+        med offert.
+      </p>
+      <p class="pt-8">Vi har inte sagt nej till något sen 1987</p>
+    </div>
+    <div class="sm:order-7">
+      <Image
+        src={my07Image}
+        alt="A description of my image."
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+  </div>
+</main>
