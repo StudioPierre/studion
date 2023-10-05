@@ -10,85 +10,46 @@
   }"
   x-on:keydown.escape.prevent.stop="close($refs.button)"
   x-id="['dropdown-button']"
-  class="bg-gray-900 w-full fixed"
+  class="relative"
 >
-  <nav
-    class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8"
-    aria-label="Global"
-  >
-    <div class="flex lg:flex-1">
-      <a href="/" class="-m-1.5 p-1.5">
-        <span class="sr-only">Studion</span>
-        <img class="h-12 w-auto" src="/assets/studion_vit.png" alt="" />
-      </a>
-    </div>
-    <div class="flex lg:hidden">
-      <button
-        x-on:click="toggle"
-        type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="hidden lg:flex lg:gap-x-12">
-      <!-- Test  -->
-      <div class="navbar">
-        <a href="/kontakt">KONTAKT</a>
-        <a href="/tjanster">ÖVRIGA TJÄNSTER</a>
-        <div class="dropdown">
-          <button class="dropbtn"
-            >STUDIOS
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="/studios/#Daylight" class="">DAYLIGHT</a>
-            <a href="/studios/#Ecom" class="">ECOM</a>
-            <a href="/studios/#Highlight" class="">HIGHLIGHT</a>
+  <div class="w-full fixed bg-gray-900 z-10">
+    <nav
+      class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8"
+      aria-label="Global"
+    >
+      <!-- Studion Logga  -->
+      <div class="flex lg:flex-1">
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">Studion</span>
+          <img class="h-12 w-auto" src="/assets/studion_vit.png" alt="" />
+        </a>
+      </div>
+      <!-- Menu stor  -->
+      <div class="hidden lg:flex lg:gap-x-12">
+        <div class="navbar">
+          <a href="/kontakt">KONTAKT</a>
+          <a href="/tjanster">ÖVRIGA TJÄNSTER</a>
+          <div class="dropdown">
+            <button class="dropbtn"
+              >STUDIOS
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/studios/#Daylight" class="">DAYLIGHT</a>
+              <a href="/studios/#Ecom" class="">ECOM</a>
+              <a href="/studios/#Highlight" class="">HIGHLIGHT</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Mobile menu, show/hide based on menu open state. -->
-  <div
-    x-ref="panel"
-    x-show="open"
-    x-on:click.outside="close($refs.button)"
-    style="display: none;"
-    class="lg:hidden"
-    role="dialog"
-    aria-modal="true"
-  >
-    <!-- Background backdrop, show/hide based on slide-over state. -->
-    <div x-show="open" class="fixed inset-0 z-10"></div>
-    <div
-      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-    >
-      <div class="flex items-center justify-between">
-        <a href="/" class="-m-1.5 p-1.5">
-          <span class="sr-only">STUDIOS</span>
-          <img class="h-12 w-auto" src="/assets/studion_vit.png" alt="" />
-        </a>
+      <!-- Hidden Hamburger -->
+      <div class="flex lg:hidden">
         <button
           x-on:click="toggle"
-          class="-m-2.5 rounded-md p-2.5 text-gray-100"
+          type="button"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
         >
-          <span class="sr-only">Close menu</span>
+          <span class="sr-only">Open main menu</span>
           <svg
             class="h-6 w-6"
             fill="none"
@@ -100,47 +61,90 @@
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
         </button>
       </div>
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-100/10">
-          <div class="space-y-2 py-6">
-            <div class="-mx-3">
-              <button
-                type="button"
-                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 leading-7 text-gray-100"
-                aria-controls="disclosure-1"
-                aria-expanded="false"
-              >
-                STUDIOS
-              </button>
-              <!-- 'Product' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2 text-gray-100" id="disclosure-1">
-                <a href="/studios/#Daylight" class="block py-2 pl-6 pr-3"
-                  >DAYLIGHT</a
+    </nav>
+
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div
+      x-ref="panel"
+      x-show="open"
+      x-on:click.outside="close($refs.button)"
+      style="display: none;"
+      class="lg:hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div x-show="open" class="fixed inset-0 z-10"></div>
+      <div
+        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      >
+        <div class="flex items-center justify-between">
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">STUDIOS</span>
+            <img class="h-12 w-auto" src="/assets/studion_vit.png" alt="" />
+          </a>
+          <button
+            x-on:click="toggle"
+            class="-m-2.5 rounded-md p-2.5 text-gray-100"
+          >
+            <span class="sr-only">Close menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-100/10">
+            <div class="space-y-2 py-6">
+              <div class="-mx-3">
+                <button
+                  type="button"
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 leading-7 text-gray-100"
+                  aria-controls="disclosure-1"
+                  aria-expanded="false"
                 >
-                <a href="/studios/#Ecom" class="block py-2 pl-6 pr-3">ECOM</a>
-                <a href="/studios/#Highlight" class="block py-2 pl-6 pr-3"
-                  >HIGHTLIGHT</a
-                >
-                <a href="/studios/#Blackbox" class="block py-2 pl-6 pr-3"
-                  >BLACKBOX</a
-                >
-                <a href="/studios/#Poddstudion" class="block py-2 pl-6 pr-3"
-                  >PODDSTUDION</a
-                >
+                  STUDIOS
+                </button>
+                <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                <div class="mt-2 space-y-2 text-gray-100" id="disclosure-1">
+                  <a href="/studios/#Daylight" class="block py-2 pl-6 pr-3"
+                    >DAYLIGHT</a
+                  >
+                  <a href="/studios/#Ecom" class="block py-2 pl-6 pr-3">ECOM</a>
+                  <a href="/studios/#Highlight" class="block py-2 pl-6 pr-3"
+                    >HIGHTLIGHT</a
+                  >
+                  <a href="/studios/#Blackbox" class="block py-2 pl-6 pr-3"
+                    >BLACKBOX</a
+                  >
+                  <a href="/studios/#Poddstudion" class="block py-2 pl-6 pr-3"
+                    >PODDSTUDION</a
+                  >
+                </div>
               </div>
+              <a
+                href="/tjanster"
+                class="-mx-3 block rounded-lg px-3 py-2 text-gray-100"
+                >ÖVRIGA TJÄNSTER</a
+              >
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-gray-100"
+                >KONTAKT</a
+              >
             </div>
-            <a
-              href="/tjanster"
-              class="-mx-3 block rounded-lg px-3 py-2 text-gray-100"
-              >ÖVRIGA TJÄNSTER</a
-            >
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-gray-100"
-              >KONTAKT</a
-            >
           </div>
         </div>
       </div>
