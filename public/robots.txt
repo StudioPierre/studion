@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://studion.se/sitemap-index.xml

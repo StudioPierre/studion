@@ -4,7 +4,7 @@ import Info from '../components/InfoBox.astro';
 ---
 
 <MainLayout title="Studion">
-  <section id="Daylight" class="">
+  <section id="Daylight" class="pt-16">
     <div class="">
       <img
         src="../assets/images/daylight.png"
@@ -108,6 +108,73 @@ import Info from '../components/InfoBox.astro';
     </div>
     <Info />
   </section>
+
+  <section id="Blackbox" class="">
+    <div class="">
+      <img
+        src="../assets/images/blackbox.jpg"
+        alt=""
+        class="w-full object-center mt- block sm:hidden"
+      />
+      <video
+        id="video1"
+        class="inset-0 w-full hidden sm:block"
+        playsinline
+        autoplay
+        muted
+        loop
+      >
+        <source src="../assets/video/blackbox.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="max-w-3xl m-auto text-center mt-6">
+      <h2 class="text-lg text-gray-900 sm:text-xl uppercase">
+        BLACKBOX | BÖRJA LJUSSÄTTNINGEN FRÅN NOLL
+      </h2>
+      <p class="pt-4">
+        85 m2 svart studio med 6 meter till tak som erbjuder totalt mörker och
+        full kontroll på vaje blänk. 3-fas, fast balkong och svart rundhorisont
+        mot tak, golv och i hörn - mer behöver inte sägas!
+      </p>
+    </div>
+    <Info />
+  </section>
+  <section id="Poddstudion" class="">
+    <div class="">
+      <img
+        src="../assets/images/poddstudion.jpg"
+        alt=""
+        class="w-full object-center mt- block sm:hidden"
+      />
+      <video
+        id="video1"
+        class="inset-0 w-full hidden sm:block"
+        playsinline
+        autoplay
+        muted
+        loop
+      >
+        <source src="../assets/video/poddstudion.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="max-w-3xl m-auto text-center mt-6">
+      <h2 class="text-lg text-gray-900 sm:text-xl uppercase">
+        PODDSTUDION | ENKLARE KAN DET INTE BLI
+      </h2>
+      <p class="pt-4">
+        Ljuddämpad ljud/TV-studio, startklar för inspelning eller sändning av
+        podd, voiceover och tv. 3 kameror + kanal för grafik och förinspelat
+        material, bild- och ljudmixer. Poddstudion kan hyras per timme med,
+        eller utan tekniker/producent. I huset finns även en podd-coach med
+        gedigen efarenhet av arbete med podd om du behöver hjälp att koma igång
+        eller bolla idéer.
+      </p>
+    </div>
+    <Info />
+  </section>
+
   <script>
     function playPauseVideo() {
       let videos = document.querySelectorAll('video');
