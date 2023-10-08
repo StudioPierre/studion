@@ -2,23 +2,32 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 // import the Image component and the image
+
 import { Image } from 'astro:assets';
+// Infobox Images
 import info1Image from '../assets/images/info-daylight.jpg';
 import info2Image from '../assets/images/info-ecom.jpg';
 import info3Image from '../assets/images/info-highlight.jpg';
 import info4Image from '../assets/images/info-blackbox.jpg';
 import info5Image from '../assets/images/info-poddstudion.jpg';
+// Section Background image Mobile Images
+import Daylight from '../assets/images/daylight.png';
+import Ecom from '../assets/images/ecom.jpg';
+import Highlight from '../assets/images/highlight.jpg';
+import Blackbox from '../assets/images/blackbox.jpg';
+import Poddstudion from '../assets/images/poddstudion.jpg';
 ---
 
 <!-- Daylight -->
 <MainLayout title="Studion">
   <section id="Daylight" class="pt-16">
     <div class="">
-      <img
-        src="../assets/images/daylight.png"
-        alt=""
+      <Image
+        src={Daylight}
+        alt="Daylight"
         class="w-full object-center block sm:hidden"
       />
+
       <video
         id="video1"
         class="inset-0 w-full hidden sm:block"
@@ -96,10 +105,10 @@ import info5Image from '../assets/images/info-poddstudion.jpg';
 
   <section id="Ecom" class="">
     <div class="">
-      <img
-        src="../assets/images/daylight.jpg"
-        alt=""
-        class="w-full object-center mt- block sm:hidden"
+      <Image
+        src={Ecom}
+        alt="Ecom"
+        class="w-full object-center block sm:hidden"
       />
       <video
         id="video1"
@@ -176,10 +185,10 @@ import info5Image from '../assets/images/info-poddstudion.jpg';
 
   <section id="Highlight" class="">
     <div class="">
-      <img
-        src="../assets/images/highlight.jpg"
-        alt=""
-        class="w-full object-center mt- block sm:hidden"
+      <Image
+        src={Highlight}
+        alt="Highlight"
+        class="w-full object-center block sm:hidden"
       />
       <video
         id="video1"
@@ -255,10 +264,10 @@ import info5Image from '../assets/images/info-poddstudion.jpg';
 
   <section id="Blackbox" class="">
     <div class="">
-      <img
-        src="../assets/images/blackbox.jpg"
-        alt=""
-        class="w-full object-center mt- block sm:hidden"
+      <Image
+        src={Blackbox}
+        alt="Blackbox"
+        class="w-full object-center block sm:hidden"
       />
       <video
         id="video1"
@@ -327,10 +336,10 @@ import info5Image from '../assets/images/info-poddstudion.jpg';
   </section>
   <section id="Poddstudion" class="">
     <div class="">
-      <img
-        src="../assets/images/poddstudion.jpg"
-        alt=""
-        class="w-full object-center mt- block sm:hidden"
+      <Image
+        src={Poddstudion}
+        alt="Poddstudion"
+        class="w-full object-center block sm:hidden"
       />
       <video
         id="video1"

@@ -1,11 +1,24 @@
+---
+// import the Image component and the image
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/images/hero-studion.jpg';
+---
+
 <section id="hero" class="pt-16">
   <div class="">
-    <img
-      src="../assets/images/studion.png"
-      alt=""
-      class="w-full object-center mt- hidden"
+    <Image
+      src={HeroImage}
+      alt="Studion Produktion"
+      class="w-full object-center block sm:hidden"
     />
-    <video id="video1" class="inset-0 w-full" playsinline autoplay muted loop>
+    <video
+      id="video1"
+      class="inset-0 w-full hidden sm:block"
+      playsinline
+      autoplay
+      muted
+      loop
+    >
       <source src="../assets/video/studion.mp4" type="video/mp4" />
     </video>
   </div>
